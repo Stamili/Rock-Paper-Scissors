@@ -5,18 +5,17 @@ let computerScore = 0
 
 function getComputerChoice() {
     let result = Math.floor(Math.random() * 3)
+    let computeChoice
     if (result === 0) {
-    let computerChoice = "rock"
-    return computerChoice
+    computerChoice = "rock"
     } 
     else if (result === 1) {
-    let computerChoice = "paper"
-    return computerChoice
+    computerChoice = "paper"
     } 
     else if (result === 2) {
-    let computerChoice = "scissors"
-    return computerChoice
+    computerChoice = "scissors"
     }
+    return computerChoice
 }
 
 function getHumanChoice() {
