@@ -18,15 +18,29 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getplayerChoice() {
-    let playerChoice = prompt("Your choice? (paper, rock, scissors)").toLowerCase();
-    if (playerChoice === "rock" || playerChoice === "paper" || playerChoice === "scissors") {
-        return playerChoice;
-    } 
-    else {
-        return "Not a valid input :(";
+const buttons = document.querySelector("#buttons");
+buttons.addEventListener('click', function(e) {
+    let playerSelection;
+    let computerSelection = getComputerChoice();
+
+    switch(e.target.className) {
+        case("R"):
+        playerSelection = "rock";
+        break;
+        case("P"):
+        playerSelection = "paper";
+        break;
+        case("S"):
+        playerSelection = "scissors";
     }
-}
+    
+    playRound(playerSelection, computerSelection);
+});
+
+
+
+
+
 
 function playRound(playerChoice, computerChoice) {
     console.log("You : " + playerChoice);
@@ -63,10 +77,9 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-const playerSelection = getplayerChoice();
-const computerSelection = getComputerChoice();
+
     
-playRound(playerSelection, computerSelection);
+
    
 
 
