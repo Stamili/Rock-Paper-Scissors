@@ -3,8 +3,6 @@ console.log("Welcome!");
 let humanScore = 0;    
 let computerScore = 0;
 
-playGame();
-
 function getComputerChoice() {
     let result = Math.floor(Math.random() * 3);
     let computerChoice;
@@ -65,18 +63,10 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    for (let i = 1; i <=5; i++) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-    }
-    console.log("Your score: " + humanScore);
-    console.log("Computer score: " + computerScore);
-    if (humanScore > computerScore)
-        console.log("Congratulations! You won.");
-    else if (humanScore < computerScore)
-        console.log("You lost!");
-    else
-        console.log("It's a tie! the game has no winners.")
-}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+    
+playRound(humanSelection, computerSelection);
+   
+
+
